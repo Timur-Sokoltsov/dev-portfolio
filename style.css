@@ -1,0 +1,231 @@
+:root {
+    --color-bg: #111;
+    --color-surface: #171717;
+    --color-border: #303030;
+    --color-text: #929292;
+    --color-accent: #c9fa77;
+    --radius: 5px;
+    --transition: 0.3s ease;
+    --content-width: 842px;
+    --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "SFMono-Regular", Consolas, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-left: 330px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font: 15px/1.7 var(--sans);
+}
+
+.site-brand {
+    position: fixed;
+    top: 9%;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    font: 700 14px var(--mono);
+    letter-spacing: -0.06em;
+}
+
+.brand-accent {
+    color: var(--color-accent);
+}
+
+.site-nav {
+    position: fixed;
+    top: 35%;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transform: translateY(-50%);
+    font-size: 13px;
+}
+
+.site-nav a {
+    padding: 8px 2px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.site-nav a:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.site-meta {
+    position: fixed;
+    top: 90%;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateY(-50%);
+    font: 11px var(--mono);
+}
+
+.hero-eyebrow {
+    margin-top: 150px;
+    color: var(--color-accent);
+    font: 11px var(--mono);
+}
+
+.hero-title {
+    margin-top: 20px;
+    color: #fff;
+    font-size: clamp(48px, 8vw, 82px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.075em;
+}
+
+.hero-title-accent {
+    color: var(--color-accent);
+}
+
+.hero-text {
+    max-width: 550px;
+    margin-top: -20px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.button {
+    cursor: pointer;
+    border-radius: var(--radius);
+    font: 12px var(--sans);
+}
+
+.button--primary {
+    padding: 12px 18px;
+    background: var(--color-accent);
+    border: none;
+}
+
+.button--secondary {
+    padding: 10px 18px;
+    color: #fff;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition);
+}
+
+.button--secondary:hover {
+    border-color: var(--color-accent);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: var(--content-width);
+    margin-top: 80px;
+}
+
+.section-index {
+    color: var(--color-accent);
+    font: 11px var(--mono);
+}
+
+.section-title {
+    margin: 0;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: -0.04em;
+}
+
+.section-rule {
+    flex: 1;
+    height: 0.6px;
+    background-color: var(--color-text);
+    border-radius: 10px;
+}
+
+.content-card {
+    box-sizing: border-box;
+    width: var(--content-width);
+    margin-top: 30px;
+    padding: 2px 20px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.service-list {
+    color: #fff;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+.stack-list {
+    color: #fff;
+    font-size: 15px;
+    word-spacing: 10px;
+}
+
+.service-list span,
+.stack-list span {
+    color: var(--color-accent);
+    font-size: 14px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 38px;
+    width: var(--content-width);
+}
+
+.project-card {
+    cursor: pointer;
+    width: 360px;
+    height: 180px;
+    margin-top: 30px;
+    padding: 2px 20px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: border-color var(--transition), transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: transform;
+}
+
+.project-card:hover {
+    border-color: var(--color-accent);
+}
+
+.project-card p:not(.project-label):not(.project-title) {
+    font-size: 13px;
+}
+
+.project-label {
+    margin-top: 18px;
+    color: var(--color-accent);
+    font: 10px var(--mono);
+}
+
+.project-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.contact-links {
+    margin-bottom: 15px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #fff;
+    font: 15px var(--mono);
+}
